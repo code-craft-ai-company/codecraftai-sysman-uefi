@@ -7,7 +7,38 @@ AI Agents working in this repository should refer to themselves as an agent name
 - Look in the '<repository>/prompts' folder for pre-build prompts
 - Files inside the .venv folder should not be modified, they are modified by the setup scripts
 
-# Project Overview
+# Description
+The `automojo-sysman-uefi` Python package provides a comprehensive interface for managing, reimaging, and reconfiguring devices via the Unified Extensible Firmware Interface (UEFI). It abstracts low-level UEFI interactions into a Pythonic API, enabling automation of device lifecycle management tasks.
+
+## Key Features
+
+1.  **Boot Management**
+    *   **Boot Order Control**: Read and modify the `BootOrder` and `BootNext` variables to control boot sequences for reimaging (e.g., force PXE or HTTP boot).
+    *   **Boot Option Management**: Create, delete, and modify `Boot####` load options, including handling device paths and optional data.
+    *   **One-Time Boot**: Support for setting the "Next Boot" option for seamless reimaging workflows.
+
+2.  **Configuration Management (HII & Variables)**
+    *   **Variable Access**: Read and write standard and vendor-specific UEFI variables (NVRAM).
+    *   **BIOS Settings Configuration**: Interface with HII (Human Interface Infrastructure) to export and apply BIOS configuration profiles (e.g., disable unused ports, enable virtualization).
+    *   **Reset Management**: capabilities to trigger system resets (Cold, Warm, Shutdown) via UEFI Runtime Services.
+
+3.  **Secure Boot & Security**
+    *   **State Management**: Query and toggle Secure Boot status.
+    *   **Key Management**: Enroll and delete keys in the PK, KEK, db, and dbx databases to manage trust anchors.
+    *   **Crypto Agility**: Support for UEFI 2.10 crypto agility features for post-quantum security readiness.
+    *   **Audit Mode**: specialized support for transitioning between Setup Mode, Audit Mode, and User Mode.
+
+4.  **Firmware Updates**
+    *   **Capsule Updates**: Support for staging firmware updates via the UEFI Capsule Update mechanism.
+    *   **ESRT Analysis**: Parse the EFI System Resource Table (ESRT) to report current firmware versions and update status.
+
+5.  **Device Inventory & Information**
+    *   **System Tables**: Access to ACPI and SMBIOS tables for hardware inventory and capability discovery.
+    *   **Memory Map**: Retrieval of the UEFI memory map for diagnostics.
+
+6.  **Reimaging Support**
+    *   **Network Boot Configuration**: Configure iSCSI, PXE, or HTTP Boot parameters to facilitate network-based OS deployment.
+    *   **Partitions & Filesystems**: Utilities to interact with the EFI System Partition (ESP) for staging bootloaders or configuration files.
 
 # Testing Conventions
 Use this section to describe the test framework that should be used for testing code in this repository.  You can instruct the Agent on how to write tests for this repository by using the
