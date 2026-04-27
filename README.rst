@@ -1,50 +1,73 @@
-=======================
-python-package-template
-=======================
-This is a template repository that can be used to quickly create a python package project.
+============================
+Automation Mojo Sysman UEFI
+============================
 
-=========================
-Features of this Template
-=========================
-* Machine Setup
-* Virtual Environment Setup (Poetry)
-* PyPi Publishing
+The ``automojo-sysman-uefi`` package is the firmware-management tier of the ``automojo-sysman-*`` suite. It manages the UEFI firmware on the host the package runs on — boot entries and boot order, Secure Boot state and MOK enrollment, raw EFI NVRAM variables, UEFI capsule firmware updates, and the EFI System Partition — exposed through the same ``ICommandRunner`` / ``IFileOperator`` interfaces and ``Aspects``-style behaviour parameters used elsewhere in the suite.
 
-========================
-How to Use This Template
-========================
-- Click the 'Use this template' button
-- Fill in the information to create your repository
-- Checkout your new repository
-- Change the following in 'repository-config.ini'
+Unlike the per-OS ``automojo-sysman-*`` packages, each manager in this package detects the running host OS at construction time and internally dispatches every verb to a host-OS-specific command builder (``efibootmgr`` / ``mokutil`` / ``efivar`` / ``fwupdmgr`` on Linux, ``bless`` / ``nvram`` / ``bputil`` / ``diskutil`` on macOS, ``bcdedit`` / PowerShell ``Uefi`` module / ``PSWindowsUpdate`` / ``mountvol`` on Windows).
 
-  #. 'PROJECT NAME'
-  #. 'REPOSITORY_NAME'
+Status
+======
 
-- If you have machine dependencies to add, put them in 'setup-ubuntu-machine'
-- Modify the pyproject.toml file with the correct package-name, author, publishing information, etc.
-- Rename the VSCODE workspace file 'mv workspaces/default-workspace.template workspaces/(project name).template'
-- Replace the README.rst file with your own README
-- Update the LICENSE.txt file with your copyright information and license.
-- Add your dependencies with python poetry 'poetry add (dependency name)'
-- Drop your package code in 'source/packages'
-- Modify the name of your package root in 'pyproject.toml'
+5 firmware features implemented (boot-management, secure-boot, efi-variables, capsule-update, esp-management). Test suite: 175/175 passing under ``testbase``. See ``specs/3-<feature>/`` for the per-OS requirements/design/tasks for each feature.
 
-  #. 'packages = [{include="(root folder name)", from="source/packages"}]'
-
-=================
-Code Organization
-=================
-* .vscode - Common tasks
-* development - This is where the runtime environment scripts are located
-* repository-setup - Scripts for homing your repository and to your checkout and machine setup
-* userguide - Where you put your user guide
-* source/packages - Put your root folder here 'source/packages/(root-module-folder)'
-* workspaces - This is where you add VSCode workspaces templates and where workspaces show up when homed.
-
-==========
-References
+Highlights
 ==========
 
-- `User Guide <userguide/userguide.rst>`
-- `Coding Standards <userguide/10-00-coding-standards.rst>`
+- ``UefiBootManagementManager`` — firmware boot entries and persistent boot order.
+- ``UefiSecureBootManager`` — Secure Boot state, policy, and MOK management.
+- ``UefiEfiVariablesManager`` — raw EFI NVRAM variable read/write/delete/list.
+- ``UefiCapsuleUpdateManager`` — UEFI firmware capsule updates (fwupd family).
+- ``UefiEspManagementManager`` — EFI System Partition discovery, mount, file I/O.
+- ``override_host_os`` config field on every manager so dispatch paths can be exercised from any developer workstation.
+
+Repository Structure
+====================
+
+- ``development/`` - Runtime environment scripts.
+- ``repository-setup/`` - Repository homing and setup scripts.
+- ``source/packages/automojo/sysman/uefi/`` - Implementation modules.
+- ``source/testroots/testbase/automojo/tests/sysman/uefi/`` - testbase test suite.
+- ``specs/`` - Feature specifications organised by phase and domain area.
+- ``userguide/`` - Standards, conventions, and documentation.
+
+Environment Setup
+=================
+
+When working in a Codex container:
+
+.. code-block:: bash
+
+   ./development/setup-agent-container
+
+For local development:
+
+.. code-block:: bash
+
+   ./repository-setup/rehome-repository
+   ./development/setup-environment
+
+Running Tests
+=============
+
+Activate the virtual environment and run the testbase suite:
+
+.. code-block:: bash
+
+   source .venv/bin/activate
+   testbase testing run --root source/testroots/testbase \
+       --includes=testbase.automojo.tests.sysman.uefi \
+       --output=./.output
+
+Standards and Conventions
+=========================
+
+- Naming conventions: ``userguide/10-02-naming-conventions.rst``
+- Code organization: ``userguide/10-01-code-organization.rst``
+- Coding standards: ``userguide/10-00-coding-standards.rst``
+
+Additional Resources
+====================
+
+- User guide entry point: ``userguide/userguide.rst``
+- Cross-OS contracts: ``../automojo-sysman-common/specs/contracts/``
