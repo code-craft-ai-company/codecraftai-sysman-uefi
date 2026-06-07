@@ -2,10 +2,10 @@
 
 ## Introduction
 
-The esp-management feature provides the `automojo-sysman-uefi` package with the ability
+The esp-management feature provides the `codecraftai-sysman-uefi` package with the ability
 to locate, mount, inspect, and modify the EFI System Partition (ESP) on the host the
 manager is running on.  This spec implements the esp-management contract defined at
-`automojo-sysman-common/specs/contracts/esp-management/contract.md` for UEFI
+`codecraftai-sysman-common/specs/contracts/esp-management/contract.md` for UEFI
 firmware management, dispatching to host-OS tooling (`findmnt`, `lsblk`, `mount` on
 Linux; `diskutil` on macOS; `Get-Partition`, `Get-Volume`, `mountvol` on Windows).
 

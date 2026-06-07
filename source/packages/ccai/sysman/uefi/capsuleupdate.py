@@ -48,9 +48,9 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
-from automojo.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
 
-from automojo.sysman.common.featurebase import (
+from ccai.sysman.common.featurebase import (
     ActionStatus,
     BaseFeatureManager,
     FeatureActionResult,

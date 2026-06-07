@@ -2,10 +2,10 @@
 
 ## Introduction
 
-The boot-management feature provides the `automojo-sysman-uefi` package with the ability
+The boot-management feature provides the `codecraftai-sysman-uefi` package with the ability
 to manage UEFI firmware boot entries and the persistent boot order on the host the
 manager is running on.  This spec implements the boot-management contract defined at
-`automojo-sysman-common/specs/contracts/boot-management/contract.md` for UEFI
+`codecraftai-sysman-common/specs/contracts/boot-management/contract.md` for UEFI
 firmware management, dispatching to host-OS tooling (`efibootmgr` on Linux, `bless` and
 `nvram` on macOS, `bcdedit` on Windows).
 
@@ -20,7 +20,7 @@ A maintenance coordinator running in an external package drives all operations b
 into this feature's public interfaces.  The feature does not decide *which* firmware
 entries to create or which boot order to use — it provides the capability to *do it*
 reliably, idempotently, and with full auditability.  All system commands are executed
-exclusively through the `automojo-interfaces` command-runner abstraction, enabling
+exclusively through the `codecraftai-interfaces` command-runner abstraction, enabling
 dry-run simulation, auditing, and test mocking without requiring a live system or live
 firmware access.
 

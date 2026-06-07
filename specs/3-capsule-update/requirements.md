@@ -2,10 +2,10 @@
 
 ## Introduction
 
-The capsule-update feature provides the `automojo-sysman-uefi` package with the ability
+The capsule-update feature provides the `codecraftai-sysman-uefi` package with the ability
 to enumerate, apply, and audit UEFI firmware capsule updates on the host the manager is
 running on.  This spec implements the capsule-update contract defined at
-`automojo-sysman-common/specs/contracts/capsule-update/contract.md` for UEFI
+`codecraftai-sysman-common/specs/contracts/capsule-update/contract.md` for UEFI
 firmware management, dispatching to host-OS tooling (`fwupdmgr` on Linux, `softwareupdate`
 as a delegation target on macOS, the `PSWindowsUpdate` PowerShell module filtered to
 firmware on Windows).
@@ -21,7 +21,7 @@ A maintenance coordinator running in an external package drives all operations b
 calling into this feature's public interfaces.  The feature does not decide *whether* to
 apply an update — it provides the capability to *discover and apply* capsule updates
 reliably, idempotently, and with full auditability.  All system commands are executed
-exclusively through the `automojo-interfaces` command-runner abstraction, enabling
+exclusively through the `codecraftai-interfaces` command-runner abstraction, enabling
 dry-run simulation, auditing, and test mocking without requiring a live system.
 
 ---

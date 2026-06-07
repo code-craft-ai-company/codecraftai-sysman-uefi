@@ -3,9 +3,9 @@
 ## Overview
 
 The esp-management feature is implemented as a single module,
-`automojo.sysman.uefi.espmanagement`, that exposes a `UefiEspManager` class.  This
+`ccai.sysman.uefi.espmanagement`, that exposes a `UefiEspManager` class.  This
 spec implements the esp-management contract defined at
-`automojo-sysman-common/specs/contracts/esp-management/contract.md` for UEFI
+`codecraftai-sysman-common/specs/contracts/esp-management/contract.md` for UEFI
 firmware management, dispatching to host-OS tooling (`findmnt`, `lsblk`, `mount` on
 Linux, `diskutil` on macOS, `Get-Partition`, `Get-Volume`, `mountvol` on Windows).
 
@@ -34,7 +34,7 @@ No direct file-system access or `subprocess` calls are made inside the module.
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
 │            UefiEspManager                                   │
-│  automojo.sysman.uefi.espmanagement                         │
+│  ccai.sysman.uefi.espmanagement                         │
 │                                                             │
 │  get_esp_info()         is_esp_mounted()                    │
 │  mount_esp(mountpoint)  unmount_esp(mountpoint)             │
@@ -113,7 +113,7 @@ dispatch path for testing.
 
 ### `UefiEspManager`
 
-**Location:** `source/packages/automojo/sysman/uefi/espmanagement.py`
+**Location:** `source/packages/ccai/sysman/uefi/espmanagement.py`
 
 | Method | Signature | Description |
 |---|---|---|
@@ -176,7 +176,7 @@ class UefiEspNotMountedError(UefiEspQueryError):
 
 ## Interfaces
 
-### `ICommandRunner` (from `automojo-interfaces`)
+### `ICommandRunner` (from `codecraftai-interfaces`)
 
 ```python
 class ICommandRunner(Protocol):
@@ -188,7 +188,7 @@ class ICommandRunner(Protocol):
     ) -> RunResult: ...
 ```
 
-### `IFileOperator` (from `automojo-interfaces`)
+### `IFileOperator` (from `codecraftai-interfaces`)
 
 ```python
 class IFileOperator(Protocol):
@@ -436,12 +436,12 @@ All write failures (including "ESP not mounted" for `write_esp_file` /
 ## Module Layout
 
 ```
-source/packages/automojo/sysman/uefi/
+source/packages/ccai/sysman/uefi/
 ├── __init__.py
 └── espmanagement.py          ← UefiEspManager, config, models, exceptions
 
 source/testroots/testbase/
-└── automojo/tests/sysman/uefi/
+└── ccai/tests/sysman/uefi/
     └── test_espmanagement.py
 ```
 
@@ -452,9 +452,9 @@ source/testroots/testbase/
 ### Linux — Mount, Write a Loader, Unmount
 
 ```python
-from automojo.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
-from automojo.sysman.uefi.fileoperators import LocalFileOperator
-from automojo.sysman.uefi.espmanagement import (
+from ccai.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
+from ccai.sysman.uefi.fileoperators import LocalFileOperator
+from ccai.sysman.uefi.espmanagement import (
     UefiEspManager,
     UefiEspManagerConfig,
 )

@@ -3,13 +3,13 @@
 Checked items (`[x]`) are implemented and covered by tests.  Unchecked
 items (`[ ]`) identify remaining work.  The capsule-update module is
 landed at
-`source/packages/automojo/sysman/uefi/capsuleupdate.py` with paired
+`source/packages/ccai/sysman/uefi/capsuleupdate.py` with paired
 tests at
-`source/testroots/testbase/automojo/tests/sysman/uefi/test_capsuleupdate.py`.
+`source/testroots/testbase/ccai/tests/sysman/uefi/test_capsuleupdate.py`.
 
 ## Module and Models
 
-- [x] 1. Create the `automojo.sysman.uefi.capsuleupdate` module
+- [x] 1. Create the `ccai.sysman.uefi.capsuleupdate` module
 
 - [x] 2. Define `UefiCapsuleUpdateActionStatus` enum (SUCCESS /
   FAILED / SKIPPED / DRY_RUN) — aliased to the shared `ActionStatus`
@@ -137,7 +137,7 @@ tests at
 - [ ] 45. **Cross-OS contract conformance review**: verify that this
   implementation's result / query dataclass shapes match the
   contract at
-  `automojo-sysman-common/specs/contracts/capsule-update/contract.md`.
+  `codecraftai-sysman-common/specs/contracts/capsule-update/contract.md`.
   *Drift discovered:* the contract-mandated
   `CapsuleUpdateActionResult.applied: CapsuleUpdateInfo | None`
   field is not implemented in this UEFI variant; we surface the

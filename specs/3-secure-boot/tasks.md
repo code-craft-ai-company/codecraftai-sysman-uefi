@@ -5,7 +5,7 @@ items (`[ ]`) identify remaining work.
 
 ## Module and Models
 
-- [x] 1. Create the `automojo.sysman.uefi.secureboot` module
+- [x] 1. Create the `ccai.sysman.uefi.secureboot` module
 
 - [x] 2. Define `UefiSecureBootActionStatus` enum (SUCCESS / FAILED /
   SKIPPED / DRY_RUN)
@@ -117,7 +117,7 @@ items (`[ ]`) identify remaining work.
 - [ ] 39. **Cross-OS contract conformance review**: verify that this
   implementation's result and query dataclass shapes match the
   contract at
-  `automojo-sysman-common/specs/contracts/secure-boot/contract.md`.
+  `codecraftai-sysman-common/specs/contracts/secure-boot/contract.md`.
   Initial drift notes:
     - `UefiSecureBootPolicy` exposes per-slot **counts** (`kek_count`
       etc.) where the spec design.md describes per-slot **hash lists**

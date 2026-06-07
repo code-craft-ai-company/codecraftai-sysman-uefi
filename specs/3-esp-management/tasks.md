@@ -3,13 +3,13 @@
 Checked items (`[x]`) are implemented and covered by tests.  Unchecked
 items (`[ ]`) identify remaining work.  The esp-management module is
 landed at
-`source/packages/automojo/sysman/uefi/espmanagement.py` with paired
+`source/packages/ccai/sysman/uefi/espmanagement.py` with paired
 tests at
-`source/testroots/testbase/automojo/tests/sysman/uefi/test_espmanagement.py`.
+`source/testroots/testbase/ccai/tests/sysman/uefi/test_espmanagement.py`.
 
 ## Module and Models
 
-- [x] 1. Create the `automojo.sysman.uefi.espmanagement` module
+- [x] 1. Create the `ccai.sysman.uefi.espmanagement` module
 
 - [x] 2. Define `UefiEspActionStatus` enum (SUCCESS / FAILED /
   SKIPPED / DRY_RUN) — aliased to the shared `ActionStatus` in
@@ -78,7 +78,7 @@ tests at
   *Drift from contract:* the contract specifies
   `IFileOperator.write_bytes` delegation; this implementation routes
   every file-I/O verb through the same `ICommandRunner` to match the
-  established pattern across all `automojo-sysman-*` Layer-3
+  established pattern across all `codecraftai-sysman-*` Layer-3
   features.
 
 - [x] 18. Implement `delete_esp_file(path)` — mount precondition;
@@ -141,7 +141,7 @@ tests at
 - [ ] 49. **Cross-OS contract conformance review**: verify that this
   implementation's result / info dataclass shapes match the
   contract at
-  `automojo-sysman-common/specs/contracts/esp-management/contract.md`.
+  `codecraftai-sysman-common/specs/contracts/esp-management/contract.md`.
   *Drift discovered:* the contract specifies
   `EspInfo.detected: bool`, `EspInfo.fstype: str`, `EspInfo.uuid`,
   and `EspInfo.partition_guid`; this implementation surfaces the

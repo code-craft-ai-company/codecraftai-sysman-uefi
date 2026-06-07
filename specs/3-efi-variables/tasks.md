@@ -5,7 +5,7 @@ items (`[ ]`) identify remaining work.
 
 ## Module and Models
 
-- [x] 1. Create the `automojo.sysman.uefi.efivariables` module
+- [x] 1. Create the `ccai.sysman.uefi.efivariables` module
 
 - [x] 2. Define `UefiVariableActionStatus` enum (SUCCESS / FAILED /
   SKIPPED / DRY_RUN)
@@ -116,7 +116,7 @@ items (`[ ]`) identify remaining work.
   implementation's `UefiVariableActionResult` / `UefiVariable` field
   shapes and the `namespace`/`attributes` semantics match the
   contract at
-  `automojo-sysman-common/specs/contracts/efi-variables/contract.md`.
+  `codecraftai-sysman-common/specs/contracts/efi-variables/contract.md`.
   Initial drift notes:
     - `UefiVariable.value` is `Optional[bytes]` to allow listing-shape
       records that have no associated value bytes; the contract names

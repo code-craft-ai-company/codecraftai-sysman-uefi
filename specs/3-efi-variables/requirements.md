@@ -2,10 +2,10 @@
 
 ## Introduction
 
-The efi-variables feature provides the `automojo-sysman-uefi` package with the ability
+The efi-variables feature provides the `codecraftai-sysman-uefi` package with the ability
 to read, write, delete, and enumerate raw EFI NVRAM variables on the host the manager is
 running on.  This spec implements the efi-variables contract defined at
-`automojo-sysman-common/specs/contracts/efi-variables/contract.md` for UEFI firmware
+`codecraftai-sysman-common/specs/contracts/efi-variables/contract.md` for UEFI firmware
 management, dispatching to host-OS tooling (`efivar` and the `/sys/firmware/efi/efivars`
 filesystem on Linux, `nvram` on macOS, the PowerShell `Uefi` module on Windows).
 
@@ -20,7 +20,7 @@ A maintenance coordinator running in an external package drives all operations b
 calling into this feature's public interfaces.  The feature does not decide *which*
 variables to set — it provides the capability to *read and write* them reliably,
 idempotently, and with full auditability.  All system commands are executed exclusively
-through the `automojo-interfaces` command-runner abstraction, enabling dry-run
+through the `codecraftai-interfaces` command-runner abstraction, enabling dry-run
 simulation, auditing, and test mocking without requiring a live system.
 
 ---

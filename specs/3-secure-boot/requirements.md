@@ -2,11 +2,11 @@
 
 ## Introduction
 
-The secure-boot feature provides the `automojo-sysman-uefi` package with the ability to
+The secure-boot feature provides the `codecraftai-sysman-uefi` package with the ability to
 inspect Secure Boot state and policy, and — on host OSes where user-space tooling
 exposes it — enroll and reset Machine-Owner Keys (MOKs).  This spec implements the
 secure-boot contract defined at
-`automojo-sysman-common/specs/contracts/secure-boot/contract.md` for UEFI firmware
+`codecraftai-sysman-common/specs/contracts/secure-boot/contract.md` for UEFI firmware
 management, dispatching to host-OS tooling (`mokutil` and the `efivars` filesystem on
 Linux, `bputil` and `csrutil` on macOS, `Confirm-SecureBootUEFI` and
 `Get-SecureBootPolicy` on Windows).
@@ -24,7 +24,7 @@ A maintenance coordinator running in an external package drives all operations b
 calling into this feature's public interfaces.  The feature does not decide *which* keys
 to enroll or *whether* Secure Boot should be on — it provides the capability to
 *inspect and adjust* reliably, idempotently, and with full auditability.  All system
-commands are executed exclusively through the `automojo-interfaces` command-runner
+commands are executed exclusively through the `codecraftai-interfaces` command-runner
 abstraction, enabling dry-run simulation, auditing, and test mocking without requiring a
 live system.
 
