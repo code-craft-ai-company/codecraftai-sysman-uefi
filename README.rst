@@ -1,10 +1,10 @@
 ============================
-Automation Mojo Sysman UEFI
+Code Craft AI Sysman UEFI
 ============================
 
-The ``automojo-sysman-uefi`` package is the firmware-management tier of the ``automojo-sysman-*`` suite. It manages the UEFI firmware on the host the package runs on — boot entries and boot order, Secure Boot state and MOK enrollment, raw EFI NVRAM variables, UEFI capsule firmware updates, and the EFI System Partition — exposed through the same ``ICommandRunner`` / ``IFileOperator`` interfaces and ``Aspects``-style behaviour parameters used elsewhere in the suite.
+The ``codecraftai-sysman-uefi`` package is the firmware-management tier of the ``codecraftai-sysman-*`` suite. It manages the UEFI firmware on the host the package runs on — boot entries and boot order, Secure Boot state and MOK enrollment, raw EFI NVRAM variables, UEFI capsule firmware updates, and the EFI System Partition — exposed through the same ``ICommandRunner`` / ``IFileOperator`` interfaces and ``Aspects``-style behaviour parameters used elsewhere in the suite.
 
-Unlike the per-OS ``automojo-sysman-*`` packages, each manager in this package detects the running host OS at construction time and internally dispatches every verb to a host-OS-specific command builder (``efibootmgr`` / ``mokutil`` / ``efivar`` / ``fwupdmgr`` on Linux, ``bless`` / ``nvram`` / ``bputil`` / ``diskutil`` on macOS, ``bcdedit`` / PowerShell ``Uefi`` module / ``PSWindowsUpdate`` / ``mountvol`` on Windows).
+Unlike the per-OS ``codecraftai-sysman-*`` packages, each manager in this package detects the running host OS at construction time and internally dispatches every verb to a host-OS-specific command builder (``efibootmgr`` / ``mokutil`` / ``efivar`` / ``fwupdmgr`` on Linux, ``bless`` / ``nvram`` / ``bputil`` / ``diskutil`` on macOS, ``bcdedit`` / PowerShell ``Uefi`` module / ``PSWindowsUpdate`` / ``mountvol`` on Windows).
 
 Status
 ======
@@ -26,8 +26,8 @@ Repository Structure
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/sysman/uefi/`` - Implementation modules.
-- ``source/testroots/testbase/automojo/tests/sysman/uefi/`` - testbase test suite.
+- ``source/packages/ccai/sysman/uefi/`` - Implementation modules.
+- ``source/testroots/testbase/ccai/tests/sysman/uefi/`` - testbase test suite.
 - ``specs/`` - Feature specifications organised by phase and domain area.
 - ``userguide/`` - Standards, conventions, and documentation.
 
@@ -56,7 +56,7 @@ Activate the virtual environment and run the testbase suite:
 
    source .venv/bin/activate
    testbase testing run --root source/testroots/testbase \
-       --includes=testbase.automojo.tests.sysman.uefi \
+       --includes=testbase.ccai.tests.sysman.uefi \
        --output=./.output
 
 Standards and Conventions
@@ -70,4 +70,4 @@ Additional Resources
 ====================
 
 - User guide entry point: ``userguide/userguide.rst``
-- Cross-OS contracts: ``../automojo-sysman-common/specs/contracts/``
+- Cross-OS contracts: ``../codecraftai-sysman-common/specs/contracts/``

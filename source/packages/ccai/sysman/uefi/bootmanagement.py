@@ -32,9 +32,9 @@ import platform
 from dataclasses import dataclass, field
 from typing import Optional
 
-from automojo.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
 
-from automojo.sysman.common.featurebase import (
+from ccai.sysman.common.featurebase import (
     ActionStatus,
     BaseFeatureManager,
     FeatureActionResult,

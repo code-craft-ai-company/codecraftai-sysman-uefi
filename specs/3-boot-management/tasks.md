@@ -5,7 +5,7 @@ items (`[ ]`) identify remaining work.
 
 ## Module and Models
 
-- [x] 1. Create the `automojo.sysman.uefi.bootmanagement` module
+- [x] 1. Create the `ccai.sysman.uefi.bootmanagement` module
 
 - [x] 2. Define `UefiBootActionStatus` enum (SUCCESS / FAILED / SKIPPED
   / DRY_RUN)
@@ -113,7 +113,7 @@ items (`[ ]`) identify remaining work.
 - [ ] 46. **Cross-OS contract conformance review**: verify that this
   implementation's `UefiBootActionResult` / `UefiBootEntryInfo`
   field shapes match the cross-OS contract at
-  `automojo-sysman-common/specs/contracts/boot-management/contract.md`.
+  `codecraftai-sysman-common/specs/contracts/boot-management/contract.md`.
   Initial review notes:
     - `UefiBootEntryInfo` exposes `loader: str | None` and `is_default:
       bool` whereas the contract names `loader_path: str` and

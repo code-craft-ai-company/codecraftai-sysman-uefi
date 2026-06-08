@@ -12,11 +12,11 @@
 from dataclasses import dataclass, field
 from typing import Callable, Optional
 
-from automojo import testbase
+from ccai import testbase
 
-from automojo.interfaces.icommandrunner import RunResult
+from ccai.interfaces.icommandrunner import RunResult
 
-from automojo.sysman.uefi.efivariables import (
+from ccai.sysman.uefi.efivariables import (
     BOOTSERVICE_ACCESS,
     DEFAULT_ATTRIBUTES,
     NON_VOLATILE,

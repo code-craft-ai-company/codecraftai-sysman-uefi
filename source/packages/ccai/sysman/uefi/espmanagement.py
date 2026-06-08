@@ -30,7 +30,7 @@
         ``Get-Content``, ``Set-Content``, and ``Remove-Item``.  This
         choice keeps the package free of the additional file-operator
         dependency and matches the established pattern across every
-        ``automojo-sysman-*`` Layer-3 feature.
+        ``codecraftai-sysman-*`` Layer-3 feature.
 
     Path normalization:
         Linux / macOS use forward-slash POSIX paths.  Windows accepts
@@ -56,9 +56,9 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
-from automojo.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
 
-from automojo.sysman.common.featurebase import (
+from ccai.sysman.common.featurebase import (
     ActionStatus,
     BaseFeatureManager,
     FeatureActionResult,

@@ -3,9 +3,9 @@
 ## Overview
 
 The capsule-update feature is implemented as a single module,
-`automojo.sysman.uefi.capsuleupdate`, that exposes a `UefiCapsuleUpdateManager` class.
+`ccai.sysman.uefi.capsuleupdate`, that exposes a `UefiCapsuleUpdateManager` class.
 This spec implements the capsule-update contract defined at
-`automojo-sysman-common/specs/contracts/capsule-update/contract.md` for UEFI
+`codecraftai-sysman-common/specs/contracts/capsule-update/contract.md` for UEFI
 firmware management, dispatching to host-OS tooling (`fwupdmgr` on Linux,
 `softwareupdate` as a delegation target on macOS, the `PSWindowsUpdate` PowerShell
 module filtered to firmware on Windows).
@@ -35,7 +35,7 @@ made inside the module.
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
 │            UefiCapsuleUpdateManager                         │
-│  automojo.sysman.uefi.capsuleupdate                         │
+│  ccai.sysman.uefi.capsuleupdate                         │
 │                                                             │
 │  list_available_updates(device_id)                          │
 │  apply_update(update_id)                                    │
@@ -102,7 +102,7 @@ forces a specific dispatch path for testing.
 
 ### `UefiCapsuleUpdateManager`
 
-**Location:** `source/packages/automojo/sysman/uefi/capsuleupdate.py`
+**Location:** `source/packages/ccai/sysman/uefi/capsuleupdate.py`
 
 | Method | Signature | Description |
 |---|---|---|
@@ -178,7 +178,7 @@ class UefiCapsuleUpdateQueryError(Exception):
 
 ## Interfaces
 
-### `ICommandRunner` (from `automojo-interfaces`)
+### `ICommandRunner` (from `codecraftai-interfaces`)
 
 ```python
 class ICommandRunner(Protocol):
@@ -440,12 +440,12 @@ blocked") are surfaced as `UefiCapsuleUpdateActionResult` with `status=FAILED`.
 ## Module Layout
 
 ```
-source/packages/automojo/sysman/uefi/
+source/packages/ccai/sysman/uefi/
 ├── __init__.py
 └── capsuleupdate.py          ← UefiCapsuleUpdateManager, config, models, exceptions
 
 source/testroots/testbase/
-└── automojo/tests/sysman/uefi/
+└── ccai/tests/sysman/uefi/
     └── test_capsuleupdate.py
 ```
 
@@ -456,8 +456,8 @@ source/testroots/testbase/
 ### Linux — Enumerate and Apply All Pending Firmware Updates
 
 ```python
-from automojo.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
-from automojo.sysman.uefi.capsuleupdate import (
+from ccai.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
+from ccai.sysman.uefi.capsuleupdate import (
     UefiCapsuleUpdateManager,
     UefiCapsuleUpdateManagerConfig,
 )

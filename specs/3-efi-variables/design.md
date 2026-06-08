@@ -3,9 +3,9 @@
 ## Overview
 
 The efi-variables feature is implemented as a single module,
-`automojo.sysman.uefi.efivariables`, that exposes a `UefiVariableManager` class.  This
+`ccai.sysman.uefi.efivariables`, that exposes a `UefiVariableManager` class.  This
 spec implements the efi-variables contract defined at
-`automojo-sysman-common/specs/contracts/efi-variables/contract.md` for UEFI firmware
+`codecraftai-sysman-common/specs/contracts/efi-variables/contract.md` for UEFI firmware
 management, dispatching to host-OS tooling (`efivar` and the `/sys/firmware/efi/efivars`
 filesystem on Linux, `nvram` on macOS, the PowerShell `Uefi` module on Windows).
 
@@ -33,7 +33,7 @@ on the runner.
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
 │            UefiVariableManager                              │
-│  automojo.sysman.uefi.efivariables                          │
+│  ccai.sysman.uefi.efivariables                          │
 │                                                             │
 │  get_variable(name, namespace)                              │
 │  set_variable(name, value, namespace, attributes)           │
@@ -94,7 +94,7 @@ specific dispatch path for testing.
 
 ### `UefiVariableManager`
 
-**Location:** `source/packages/automojo/sysman/uefi/efivariables.py`
+**Location:** `source/packages/ccai/sysman/uefi/efivariables.py`
 
 | Method | Signature | Description |
 |---|---|---|
@@ -169,7 +169,7 @@ DEFAULT_ATTRIBUTES = NON_VOLATILE | BOOTSERVICE_ACCESS | RUNTIME_ACCESS  # 0x07
 
 ## Interfaces
 
-### `ICommandRunner` (from `automojo-interfaces`)
+### `ICommandRunner` (from `codecraftai-interfaces`)
 
 ```python
 class ICommandRunner(Protocol):
@@ -451,12 +451,12 @@ All write failures are surfaced as `UefiVariableActionResult` with `status=FAILE
 ## Module Layout
 
 ```
-source/packages/automojo/sysman/uefi/
+source/packages/ccai/sysman/uefi/
 ├── __init__.py
 └── efivariables.py          ← UefiVariableManager, config, models, exceptions
 
 source/testroots/testbase/
-└── automojo/tests/sysman/uefi/
+└── ccai/tests/sysman/uefi/
     └── test_efivariables.py
 ```
 
@@ -467,8 +467,8 @@ source/testroots/testbase/
 ### Linux — Read-Modify-Write a Boot-Variable Integer
 
 ```python
-from automojo.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
-from automojo.sysman.uefi.efivariables import (
+from ccai.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
+from ccai.sysman.uefi.efivariables import (
     UefiVariableManager,
     UefiVariableManagerConfig,
     NON_VOLATILE,

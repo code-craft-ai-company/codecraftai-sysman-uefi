@@ -3,9 +3,9 @@
 ## Overview
 
 The secure-boot feature is implemented as a single module,
-`automojo.sysman.uefi.secureboot`, that exposes a `UefiSecureBootManager` class.  This
+`ccai.sysman.uefi.secureboot`, that exposes a `UefiSecureBootManager` class.  This
 spec implements the secure-boot contract defined at
-`automojo-sysman-common/specs/contracts/secure-boot/contract.md` for UEFI firmware
+`codecraftai-sysman-common/specs/contracts/secure-boot/contract.md` for UEFI firmware
 management, dispatching to host-OS tooling (`mokutil` and `efivar` on Linux, `bputil`
 and `csrutil` on macOS, `Confirm-SecureBootUEFI` and `Get-SecureBootPolicy` on Windows).
 
@@ -32,7 +32,7 @@ made inside the module.
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
 │            UefiSecureBootManager                            │
-│  automojo.sysman.uefi.secureboot                            │
+│  ccai.sysman.uefi.secureboot                            │
 │                                                             │
 │  get_secure_boot_state()   get_secure_boot_policy()         │
 │  list_enrolled_keys(slot)  enroll_mok_key(path)             │
@@ -103,7 +103,7 @@ specific dispatch path for testing.
 
 ### `UefiSecureBootManager`
 
-**Location:** `source/packages/automojo/sysman/uefi/secureboot.py`
+**Location:** `source/packages/ccai/sysman/uefi/secureboot.py`
 
 | Method | Signature | Description |
 |---|---|---|
@@ -177,7 +177,7 @@ class UefiSecureBootQueryError(Exception):
 
 ## Interfaces
 
-### `ICommandRunner` (from `automojo-interfaces`)
+### `ICommandRunner` (from `codecraftai-interfaces`)
 
 ```python
 class ICommandRunner(Protocol):
@@ -461,12 +461,12 @@ surfaced as `UefiSecureBootActionResult` with `status=FAILED`.
 ## Module Layout
 
 ```
-source/packages/automojo/sysman/uefi/
+source/packages/ccai/sysman/uefi/
 ├── __init__.py
 └── secureboot.py            ← UefiSecureBootManager, config, models, exceptions
 
 source/testroots/testbase/
-└── automojo/tests/sysman/uefi/
+└── ccai/tests/sysman/uefi/
     └── test_secureboot.py
 ```
 
@@ -477,8 +477,8 @@ source/testroots/testbase/
 ### Linux — Enroll a MOK Key Idempotently
 
 ```python
-from automojo.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
-from automojo.sysman.uefi.secureboot import (
+from ccai.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
+from ccai.sysman.uefi.secureboot import (
     UefiSecureBootManager,
     UefiSecureBootManagerConfig,
 )

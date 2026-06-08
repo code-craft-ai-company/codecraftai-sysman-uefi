@@ -3,9 +3,9 @@
 ## Overview
 
 The boot-management feature is implemented as a single module,
-`automojo.sysman.uefi.bootmanagement`, that exposes a `UefiBootManager` class.  This
+`ccai.sysman.uefi.bootmanagement`, that exposes a `UefiBootManager` class.  This
 spec implements the boot-management contract defined at
-`automojo-sysman-common/specs/contracts/boot-management/contract.md` for UEFI
+`codecraftai-sysman-common/specs/contracts/boot-management/contract.md` for UEFI
 firmware management, dispatching to host-OS tooling (`efibootmgr` on Linux, `bless` and
 `nvram` on macOS, `bcdedit` on Windows).
 
@@ -41,7 +41,7 @@ for details on local / remote execution, reliability tracking, and aspect config
                          ▼
 ┌─────────────────────────────────────────────────────────────┐
 │            UefiBootManager                                  │
-│  automojo.sysman.uefi.bootmanagement                        │
+│  ccai.sysman.uefi.bootmanagement                        │
 │                                                             │
 │  list_boot_entries()    get_boot_entry(id)                  │
 │  create_boot_entry(s)   delete_boot_entry(id)               │
@@ -122,7 +122,7 @@ by the test suite so all three paths are covered on any developer workstation.
 
 ### `UefiBootManager`
 
-**Location:** `source/packages/automojo/sysman/uefi/bootmanagement.py`
+**Location:** `source/packages/ccai/sysman/uefi/bootmanagement.py`
 
 | Method | Signature | Description |
 |---|---|---|
@@ -197,7 +197,7 @@ class UefiBootQueryError(Exception):
 
 ## Interfaces
 
-### `ICommandRunner` (from `automojo-interfaces`)
+### `ICommandRunner` (from `codecraftai-interfaces`)
 
 ```python
 class ICommandRunner(Protocol):
@@ -474,12 +474,12 @@ All failures from write operations are surfaced as `UefiBootActionResult` with
 ## Module Layout
 
 ```
-source/packages/automojo/sysman/uefi/
+source/packages/ccai/sysman/uefi/
 ├── __init__.py
 └── bootmanagement.py         ← UefiBootManager, config, models, exceptions
 
 source/testroots/testbase/
-└── automojo/tests/sysman/uefi/
+└── ccai/tests/sysman/uefi/
     └── test_bootmanagement.py
 ```
 
@@ -490,8 +490,8 @@ source/testroots/testbase/
 ### Linux Host — Create and Order an Entry
 
 ```python
-from automojo.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
-from automojo.sysman.uefi.bootmanagement import (
+from ccai.sysman.uefi.runners import LocalCommandRunner, LocalRunnerConfig
+from ccai.sysman.uefi.bootmanagement import (
     UefiBootManager,
     UefiBootManagerConfig,
     UefiBootEntrySpec,
