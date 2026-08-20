@@ -37,6 +37,12 @@ from typing import Optional
 
 from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
 
+from ccai.protocols.uefi.uefiguids import (
+    EFI_GLOBAL_VARIABLE_GUID,
+    EFI_IMAGE_SECURITY_DATABASE_GUID,
+)
+from ccai.protocols.uefi.uefivariables import UefiVariableAttributes
+
 from ccai.sysman.common.featurebase import (
     ActionStatus,
     BaseFeatureManager,
@@ -59,16 +65,22 @@ _DEFAULT_EFIVARS_DIR = "/sys/firmware/efi/efivars"
 
 # ----------------------------------------------------------------------
 # Attribute bit constants
+#
+# The bit positions are fixed by UEFI Specification 8.2 and are owned by
+# 'codecraftai-protocol-uefi'.  These module-level names are kept as
+# aliases onto that enumeration so importers of this module have a stable
+# surface.  UefiVariableAttributes is an IntFlag, so the aliases still
+# combine with '|' and still compare equal to the raw bit values.
 # ----------------------------------------------------------------------
 
 
-NON_VOLATILE                          = 0x01
-BOOTSERVICE_ACCESS                    = 0x02
-RUNTIME_ACCESS                        = 0x04
-HARDWARE_ERROR_RECORD                 = 0x08
-AUTHENTICATED_WRITE_ACCESS            = 0x10
-TIME_BASED_AUTHENTICATED_WRITE_ACCESS = 0x20
-APPEND_WRITE                          = 0x40
+NON_VOLATILE                          = UefiVariableAttributes.NON_VOLATILE
+BOOTSERVICE_ACCESS                    = UefiVariableAttributes.BOOTSERVICE_ACCESS
+RUNTIME_ACCESS                        = UefiVariableAttributes.RUNTIME_ACCESS
+HARDWARE_ERROR_RECORD                 = UefiVariableAttributes.HARDWARE_ERROR_RECORD
+AUTHENTICATED_WRITE_ACCESS            = UefiVariableAttributes.AUTHENTICATED_WRITE_ACCESS
+TIME_BASED_AUTHENTICATED_WRITE_ACCESS = UefiVariableAttributes.TIME_BASED_AUTHENTICATED_WRITE_ACCESS
+APPEND_WRITE                          = UefiVariableAttributes.APPEND_WRITE
 
 DEFAULT_ATTRIBUTES = NON_VOLATILE | BOOTSERVICE_ACCESS | RUNTIME_ACCESS  # 0x07
 
@@ -91,9 +103,12 @@ _ATTRIBUTE_NAME_TO_BIT = {
 
 _GUID_LENGTH = 36
 
+# Rendered to str because every dispatch path formats the GUID into an
+# argv for 'efivar' / 'nvram' / PowerShell.  The canonical uuid.UUID
+# values live in ccai.protocols.uefi.uefiguids.
 _NAMESPACE_ALIAS_TO_GUID = {
-    "EFI_GLOBAL_VARIABLE":              "8be4df61-93ca-11d2-aa0d-00e098032b8c",
-    "EFI_IMAGE_SECURITY_DATABASE_GUID": "d719b2cb-3d3a-4596-a3bc-dad00e67656f",
+    "EFI_GLOBAL_VARIABLE":              str(EFI_GLOBAL_VARIABLE_GUID),
+    "EFI_IMAGE_SECURITY_DATABASE_GUID": str(EFI_IMAGE_SECURITY_DATABASE_GUID),
 }
 
 # Aliases that are valid only on a specific host OS.  The host whose

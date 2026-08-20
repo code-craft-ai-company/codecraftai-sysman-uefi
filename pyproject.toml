@@ -24,6 +24,7 @@ codecraftai-credentials = { git = "https://github.com/code-craft-ai-company/code
 codecraftai-dataprofiles = { git = "https://github.com/code-craft-ai-company/codecraftai-dataprofiles.git", branch = "main" }
 codecraftai-interfaces = { git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main" }
 codecraftai-interop = { git = "https://github.com/code-craft-ai-company/codecraftai-interop.git", branch = "main" }
+codecraftai-protocol-uefi = { git = "https://github.com/code-craft-ai-company/codecraftai-protocol-uefi.git", branch = "main" }
 codecraftai-sysman-common = { git = "https://github.com/code-craft-ai-company/codecraftai-sysman-common.git", branch = "main" }
 codecraftai-waiting = { git = "https://github.com/code-craft-ai-company/codecraftai-waiting.git", branch = "main" }
 
