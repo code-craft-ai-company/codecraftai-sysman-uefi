@@ -402,210 +402,221 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "codecraftai-arcli"
-version = "0.0.1"
+version = "1.0.0"
 description = "Advanced Re-Usable Commandline Interface Framework"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_arcli-1.0.0-py3-none-any.whl", hash = "sha256:8606fb7b376b55eea93523aab18f273bbe8816b88a0a4c2174d0041115942f84"},
+    {file = "codecraftai_arcli-1.0.0.tar.gz", hash = "sha256:55dcfcef40eb2443ef209f5faca4cd1610b07a4c4d51e0e534c3eac9cc665e06"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-pyyaml = "^6.0.2"
+codecraftai-errors = "<2.0.0"
+pyyaml = ">=6.0.2,<7.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-arcli.git"
-reference = "main"
-resolved_reference = "9c5b205b8070f13351e6efecd768d65befed7634"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-credentials"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Credentials Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_credentials-1.0.0-py3-none-any.whl", hash = "sha256:8fed300b9bfb0d510d636589e4de3990491e645a6e51ed4b6da1c941aea2f51c"},
+    {file = "codecraftai_credentials-1.0.0.tar.gz", hash = "sha256:1e31067a1558c1e55bd9d4f9c2273e89ec67d26306a402c7cc13d86ea85262e0"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
+codecraftai-errors = "<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-credentials.git"
-reference = "main"
-resolved_reference = "3992c96eb1d126cbd6370996f6748ad188c30efe"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-dataprofiles"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Data Profiles Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_dataprofiles-1.0.0-py3-none-any.whl", hash = "sha256:fab2c0aa2c96f9ac62f928bf3bc715d57d0e8c9d5ebc21d83c7c3b2495bd79e2"},
+    {file = "codecraftai_dataprofiles-1.0.0.tar.gz", hash = "sha256:30a9cfde7eda121fc5e04da56159234a729d94ca168ad10635a0a8a74fb9cde7"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-interfaces = {git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main"}
+codecraftai-errors = "<2.0.0"
+codecraftai-interfaces = "<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-dataprofiles.git"
-reference = "main"
-resolved_reference = "11fff5f26580a0874a784ffa31ed09674fb06d82"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-errors"
-version = "0.0.2"
+version = "1.0.0"
 description = "Code Craft AI - Errors"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_errors-1.0.0-py3-none-any.whl", hash = "sha256:6fa27c28e7e9eae33fde10d6ebc0c1e9f600bfafd124b3f199de6db5f587d18c"},
+    {file = "codecraftai_errors-1.0.0.tar.gz", hash = "sha256:45c6a526741e0920b356e796fd3379656d4b5dd018c58c02676783f4dcc4096d"},
+]
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-errors.git"
-reference = "main"
-resolved_reference = "bbc01a9b9e7602c225ffab0716bc6e56b472e4b4"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-extension"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Extension Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_extension-1.0.0-py3-none-any.whl", hash = "sha256:f7dc4b9fe4fc517ea10c22741cb43c84637c2fab61b7efd62246df6bae94e76a"},
+    {file = "codecraftai_extension-1.0.0.tar.gz", hash = "sha256:8d9b4972a75c9e87a3c6fa48d14694feaeae6dacebbd2244ae35f3ccde5a586b"},
+]
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-extension.git"
-reference = "main"
-resolved_reference = "154a29978e55f7c0aedf19d65420ab705db876f7"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-integration-runtime"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Integration Runtime"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_integration_runtime-1.0.0-py3-none-any.whl", hash = "sha256:5399199213747c1aa92e82cc8f39429d2e4675605e7f783d33dc951ace7f6bb5"},
+    {file = "codecraftai_integration_runtime-1.0.0.tar.gz", hash = "sha256:881535434e4bcaccd516237904e88fec1aaecec28d69150b17018de43af1112b"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-extension = {git = "https://github.com/code-craft-ai-company/codecraftai-extension.git", branch = "main"}
-codecraftai-testbase = {git = "https://github.com/code-craft-ai-company/codecraftai-testbase.git", branch = "main"}
-codecraftai-this-app = {git = "https://github.com/code-craft-ai-company/codecraftai-this-app.git", branch = "main"}
-codecraftai-xmodules = {git = "https://github.com/code-craft-ai-company/codecraftai-xmodules.git", branch = "main"}
-requests = "^2.32.4"
+codecraftai-errors = "<2.0.0"
+codecraftai-extension = "<2.0.0"
+codecraftai-testbase = "<2.0.0"
+codecraftai-this-app = "<2.0.0"
+codecraftai-xmodules = "<2.0.0"
+requests = ">=2.32.4,<3.0.0"
 
 [package.extras]
 websocket = ["websocket-client (>=1.8.0,<2.0.0)"]
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-integration-runtime.git"
-reference = "main"
-resolved_reference = "21efd8abec9712ac1e6b9a2feca5b99e2a19a938"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-interfaces"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Interfaces Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_interfaces-1.0.0-py3-none-any.whl", hash = "sha256:1ac02550f4de955ecba5dc9c7c8215808ec4077d5822419d45a1fa283b19914f"},
+    {file = "codecraftai_interfaces-1.0.0.tar.gz", hash = "sha256:a681e27b5d90882325906997d9f55d851e1f608630ef619149149c55978baea4"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
+codecraftai-errors = "<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git"
-reference = "main"
-resolved_reference = "fb4b5d4206109ec14d3dcda9e11a2208b312c9e2"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-interop"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Interop Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_interop-1.0.0-py3-none-any.whl", hash = "sha256:aebffbeaf4749f4694dece3b40c488e6006696fc7878a964eef47c3773b80899"},
+    {file = "codecraftai_interop-1.0.0.tar.gz", hash = "sha256:e22e52e6aa1742ca405d52aef261cbadb3731fc6b4fab06a9b29f03500a665fe"},
+]
 
 [package.dependencies]
-click = "^8.2.1"
-codecraftai-credentials = {git = "https://github.com/code-craft-ai-company/codecraftai-credentials.git", branch = "main"}
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-integration-runtime = {git = "https://github.com/code-craft-ai-company/codecraftai-integration-runtime.git", branch = "main"}
-codecraftai-interfaces = {git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main"}
-codecraftai-networking = {git = "https://github.com/code-craft-ai-company/codecraftai-networking.git", branch = "main"}
-codecraftai-restclient-base = {git = "https://github.com/code-craft-ai-company/codecraftai-restclient-base.git", branch = "main"}
-codecraftai-runtime = {git = "https://github.com/code-craft-ai-company/codecraftai-runtime.git", branch = "main"}
-codecraftai-testbase = {git = "https://github.com/code-craft-ai-company/codecraftai-testbase.git", branch = "main"}
-codecraftai-this-app = {git = "https://github.com/code-craft-ai-company/codecraftai-this-app.git", branch = "main"}
-codecraftai-waiting = {git = "https://github.com/code-craft-ai-company/codecraftai-waiting.git", branch = "main"}
-codecraftai-xmodules = {git = "https://github.com/code-craft-ai-company/codecraftai-xmodules.git", branch = "main"}
-paramiko = "^4.0.0"
-psutil = "^7.2.1"
-requests = "^2.32.3"
-rpyc = "^6.0.1"
+click = ">=8.2.1,<9.0.0"
+codecraftai-credentials = "<2.0.0"
+codecraftai-errors = "<2.0.0"
+codecraftai-integration-runtime = "<2.0.0"
+codecraftai-interfaces = "<2.0.0"
+codecraftai-networking = "<2.0.0"
+codecraftai-restclient-base = "<2.0.0"
+codecraftai-runtime = "<2.0.0"
+codecraftai-testbase = "<2.0.0"
+codecraftai-this-app = "<2.0.0"
+codecraftai-waiting = "<2.0.0"
+codecraftai-xmodules = "<2.0.0"
+paramiko = ">=4.0.0,<5.0.0"
+psutil = ">=7.2.1,<8.0.0"
+requests = ">=2.32.3,<3.0.0"
+rpyc = ">=6.0.1,<7.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-interop.git"
-reference = "main"
-resolved_reference = "74b65e1ad03827f7b106d7ab8c9ad3fd9b56e5ff"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-networking"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Networking Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_networking-1.0.0-py3-none-any.whl", hash = "sha256:a748513b24c7643865bc9bf2eded8af8e2735696b7f8585f91d8de4a3fb0d1af"},
+    {file = "codecraftai_networking-1.0.0.tar.gz", hash = "sha256:3b856f25af9df282d48429959d85ca1c41150451b63920aaccc1ceb4217a2d9a"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-interfaces = {git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main"}
-netifaces = "^0.11.0"
+codecraftai-errors = "<2.0.0"
+codecraftai-interfaces = "<2.0.0"
+netifaces = ">=0.11.0,<0.12.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-networking.git"
-reference = "main"
-resolved_reference = "de7c2fae829465582aeeda479a82dbd519af5749"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-protocol-uefi"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - UEFI Protocol Interop Library"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_protocol_uefi-1.0.0-py3-none-any.whl", hash = "sha256:1934a19d4ca1aae8ef17efebe362f2c11e077588bf3843323d4abf8b14ba775f"},
+    {file = "codecraftai_protocol_uefi-1.0.0.tar.gz", hash = "sha256:8bf3bcffde5473854fc5c138c782a75b4ec2b2d745b5d6de381fc21b9bdde502"},
+]
 
 [package.dependencies]
-codecraftai-credentials = {git = "https://github.com/code-craft-ai-company/codecraftai-credentials.git", branch = "main"}
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-xmodules = {git = "https://github.com/code-craft-ai-company/codecraftai-xmodules.git", branch = "main"}
+codecraftai-credentials = "<2.0.0"
+codecraftai-errors = "<2.0.0"
+codecraftai-xmodules = "<2.0.0"
 
 [package.extras]
 redfish = ["requests (>=2.32.0,<3.0.0)"]
@@ -613,156 +624,162 @@ serial = ["pyserial (>=3.5,<4.0)"]
 signing = ["cryptography (>=46.0.5,<47.0.0)"]
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-protocol-uefi.git"
-reference = "main"
-resolved_reference = "12f53798e34d37858ae374b906ab02a8ea03c6df"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-restclient-base"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Rest Client Base"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_restclient_base-1.0.0-py3-none-any.whl", hash = "sha256:702bab3f9a47c698dfd1f8fd2c8f8028a52877cf1c0d59267a20f54f9bd2d183"},
+    {file = "codecraftai_restclient_base-1.0.0.tar.gz", hash = "sha256:acedc14c72432ba4daba5cb66787be6077d297294d3094fef38273fb4082970c"},
+]
 
 [package.dependencies]
-codecraftai-credentials = {git = "https://github.com/code-craft-ai-company/codecraftai-credentials.git", branch = "main"}
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-interfaces = {git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main"}
-pyyaml = "^6.0.3"
-requests = "^2.32.5"
+codecraftai-credentials = "<2.0.0"
+codecraftai-errors = "<2.0.0"
+codecraftai-interfaces = "<2.0.0"
+pyyaml = ">=6.0.3,<7.0.0"
+requests = ">=2.32.5,<3.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-restclient-base.git"
-reference = "main"
-resolved_reference = "1933cbb81beea110a90e37203ddd11601d6dc7e2"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-runtime"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Runtime"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_runtime-1.0.0-py3-none-any.whl", hash = "sha256:7833f3bbcd3b1e131a8ec195bb55d9f529ac12cf5af263aafdbfc0d4720833a0"},
+    {file = "codecraftai_runtime-1.0.0.tar.gz", hash = "sha256:fa210d7c47ce8d579aab2ccaf0febfab4678c51537148b6a53e90d12dc218eb5"},
+]
 
 [package.dependencies]
-codecraftai-this-app = {git = "https://github.com/code-craft-ai-company/codecraftai-this-app.git", branch = "main"}
+codecraftai-this-app = "<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-runtime.git"
-reference = "main"
-resolved_reference = "e866ffebe817f317c79315b923bde6f84edd4b75"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-sysman-common"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - System Management Common Foundation"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_sysman_common-1.0.0-py3-none-any.whl", hash = "sha256:64ea452753ccab33bf0a22c77ce34dd19c53796465bdec1f33a3ae106097d03d"},
+    {file = "codecraftai_sysman_common-1.0.0.tar.gz", hash = "sha256:adb4e884836ec864a0caaa5fd2482bc332dce06f62118621b81a5e5975a4f474"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-interfaces = {git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main"}
+codecraftai-errors = "<2.0.0"
+codecraftai-interfaces = "<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-sysman-common.git"
-reference = "main"
-resolved_reference = "47b96ad344294d20e453bc825928d3e181571f30"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-testbase"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - TestBase"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_testbase-1.0.0-py3-none-any.whl", hash = "sha256:b60d0be7056bb842ce423cf29b918e3e5ef43cf15f8538dd86fa44a2f0c25199"},
+    {file = "codecraftai_testbase-1.0.0.tar.gz", hash = "sha256:5f369c4b3a9deed711afcd14b69852a70abc43a1909bae5d9698e59bcb1acb16"},
+]
 
 [package.dependencies]
-codecraftai-arcli = {git = "https://github.com/code-craft-ai-company/codecraftai-arcli.git", branch = "main"}
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-interfaces = {git = "https://github.com/code-craft-ai-company/codecraftai-interfaces.git", branch = "main"}
-codecraftai-runtime = {git = "https://github.com/code-craft-ai-company/codecraftai-runtime.git", branch = "main"}
-codecraftai-this-app = {git = "https://github.com/code-craft-ai-company/codecraftai-this-app.git", branch = "main"}
-codecraftai-waiting = {git = "https://github.com/code-craft-ai-company/codecraftai-waiting.git", branch = "main"}
-codecraftai-xmodules = {git = "https://github.com/code-craft-ai-company/codecraftai-xmodules.git", branch = "main"}
-pyyaml = "^6.0.2"
+codecraftai-arcli = "<2.0.0"
+codecraftai-errors = "<2.0.0"
+codecraftai-interfaces = "<2.0.0"
+codecraftai-runtime = "<2.0.0"
+codecraftai-this-app = "<2.0.0"
+codecraftai-waiting = "<2.0.0"
+codecraftai-xmodules = "<2.0.0"
+pyyaml = ">=6.0.2,<7.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-testbase.git"
-reference = "main"
-resolved_reference = "be253c1bad84496665fe17ee88177863993e3947"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-this-app"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - This-App"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_this_app-1.0.0-py3-none-any.whl", hash = "sha256:ecba0c68df14306d2fd737f210315c4ac84ba5858efc6b8dde533049ab4aaf89"},
+    {file = "codecraftai_this_app-1.0.0.tar.gz", hash = "sha256:b54aa31b33c60dd6e44da03ebbe1857a3c14d93a5aa35d0445da425167ee77a0"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-extension = {git = "https://github.com/code-craft-ai-company/codecraftai-extension.git", branch = "main"}
-codecraftai-xmodules = {git = "https://github.com/code-craft-ai-company/codecraftai-xmodules.git", branch = "main"}
+codecraftai-errors = "<2.0.0"
+codecraftai-extension = "<2.0.0"
+codecraftai-xmodules = "<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-this-app.git"
-reference = "main"
-resolved_reference = "8e222142ac6ba7ccf4f833b53bb67660b888bca7"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-waiting"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Waiting Package"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_waiting-1.0.0-py3-none-any.whl", hash = "sha256:cbf00b8183498a9bad4d5e3fe9f03b8610d13caca3c8371b01348f698f3df674"},
+    {file = "codecraftai_waiting-1.0.0.tar.gz", hash = "sha256:8156278ecdbd2e4d5e6ab9d2efb23fac3ead873d588af90bccc186376dc6b0cf"},
+]
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-waiting.git"
-reference = "main"
-resolved_reference = "071b83b5ff6ce8cb8966aee7e6a2de97a6e926d1"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "codecraftai-xmodules"
-version = "0.0.1"
+version = "1.0.0"
 description = "Code Craft AI - Python Extension Modules"
 optional = false
 python-versions = ">=3.10,<4.0"
 groups = ["main", "dev"]
-files = []
-develop = false
+files = [
+    {file = "codecraftai_xmodules-1.0.0-py3-none-any.whl", hash = "sha256:783735753a2f3100c8735fb6d78f1ff085aa6c99d7036a7565d73b12c705baa6"},
+    {file = "codecraftai_xmodules-1.0.0.tar.gz", hash = "sha256:6d6fb9bb83606b5b599b3412823ed4e84a1ceabe8064ba2f7873b0adad5690fa"},
+]
 
 [package.dependencies]
-codecraftai-errors = {git = "https://github.com/code-craft-ai-company/codecraftai-errors.git", branch = "main"}
-codecraftai-waiting = {git = "https://github.com/code-craft-ai-company/codecraftai-waiting.git", branch = "main"}
-debugpy = "^1.8.14"
+codecraftai-errors = "<2.0.0"
+codecraftai-waiting = "<2.0.0"
+debugpy = ">=1.8.14,<2.0.0"
 
 [package.source]
-type = "git"
-url = "https://github.com/code-craft-ai-company/codecraftai-xmodules.git"
-reference = "main"
-resolved_reference = "aa6007a13842bbe98a1c22147e2b6b8391481053"
+type = "legacy"
+url = "https://code-craft.ai/licensed-repository/simple"
+reference = "codecraftai"
 
 [[package]]
 name = "colorama"
@@ -1230,4 +1247,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "30d353d0c0f6fd48c458378e6a309c0d504300c2a3396d1ce03020a8b487b7e7"
+content-hash = "204d00b1a3e7d0dea696827390015662bbc07bab1978bf52b9deeed5d025f30c"
