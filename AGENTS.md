@@ -56,7 +56,7 @@ PowerShell `Uefi` module, `Confirm-SecureBootUEFI`, `Get-SecureBootPolicy`,
 that every dispatch path can be tested from any developer workstation.
 
 All managers execute commands exclusively through the `ICommandRunner`
-abstraction from `codecraftai-interfaces`; ESP file I/O additionally uses
+abstraction from `codecraftai-foundations`; ESP file I/O additionally uses
 `IFileOperator`.  `Aspects`-style behaviour parameters (persistence, retry,
 timeout) compose on the runner and are transparent to the managers.  On
 host OSes where a verb has no real implementation (for example,
