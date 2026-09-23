@@ -48,7 +48,7 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
-from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner
 
 from ccai.sysman.common.featurebase import (
     ActionStatus,
@@ -68,9 +68,6 @@ _DEFAULT_POWERSHELL = "powershell"
 
 _DOWNGRADE_BLOCKED_TOKEN = "firmware_downgrade_blocked"
 _PSWINDOWSUPDATE_MISSING_TOKEN = "windows_pswindowsupdate_required"
-_MACOS_DELEGATE_TOKEN = "macos_delegate_to_softwareupdate"
-_WINDOWS_NO_CAPSULE_TOKEN = "windows_capsule_file_unsupported"
-_DARWIN_NO_CAPSULE_TOKEN = "darwin_capsule_file_unsupported"
 
 
 UefiCapsuleUpdateActionStatus = ActionStatus

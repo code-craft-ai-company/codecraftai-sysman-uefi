@@ -56,7 +56,7 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
-from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner
 
 from ccai.sysman.common.featurebase import (
     ActionStatus,

@@ -21,15 +21,11 @@ from ccai.sysman.uefi.efivariables import (
     DEFAULT_ATTRIBUTES,
     NON_VOLATILE,
     RUNTIME_ACCESS,
-    UefiVariable,
-    UefiVariableActionResult,
     UefiVariableActionStatus,
-    UefiVariableInfo,
     UefiVariableManager,
     UefiVariableManagerConfig,
     UefiVariableNamespaceError,
     UefiVariableNotFoundError,
-    UefiVariableQueryError,
     normalise_namespace,
 )
 

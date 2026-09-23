@@ -21,11 +21,7 @@ from ccai import testbase
 from ccai.interfaces.icommandrunner import RunResult
 
 from ccai.sysman.uefi.espmanagement import (
-    UefiEspActionResult,
     UefiEspActionStatus,
-    UefiEspFileContent,
-    UefiEspFileInfo,
-    UefiEspInfo,
     UefiEspManager,
     UefiEspManagerConfig,
     UefiEspQueryError,

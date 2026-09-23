@@ -27,12 +27,11 @@
 """
 
 import os
-import platform
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
-from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner
 
 from ccai.sysman.common.featurebase import (
     ActionStatus,
@@ -42,8 +41,6 @@ from ccai.sysman.common.featurebase import (
     HOST_OS_DARWIN,
     HOST_OS_LINUX,
     HOST_OS_WINDOWS,
-    detect_host_os,
-    normalise_override_host_os,
 )
 
 
@@ -1153,9 +1150,6 @@ class UefiBootManager(BaseFeatureManager):
                 Boot0000* ubuntu       HD(...)/File(\\EFI\\ubuntu\\shimx64.efi)
                 Boot0001  Disabled     ...
         """
-        boot_current = self._parse_efibootmgr_named_line(
-            text=text, prefix="BootCurrent:",
-        )
         boot_order = self._parse_efibootmgr_boot_order(text=text)
 
         rtnval: list[UefiBootEntryInfo] = []

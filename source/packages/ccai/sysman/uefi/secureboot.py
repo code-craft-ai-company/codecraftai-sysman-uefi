@@ -30,12 +30,11 @@
 """
 
 import os
-import platform
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
-from ccai.interfaces.icommandrunner import ICommandRunner, RunResult
+from ccai.interfaces.icommandrunner import ICommandRunner
 
 from ccai.sysman.common.featurebase import (
     ActionStatus,
@@ -45,8 +44,6 @@ from ccai.sysman.common.featurebase import (
     HOST_OS_DARWIN,
     HOST_OS_LINUX,
     HOST_OS_WINDOWS,
-    detect_host_os,
-    normalise_override_host_os,
 )
 
 

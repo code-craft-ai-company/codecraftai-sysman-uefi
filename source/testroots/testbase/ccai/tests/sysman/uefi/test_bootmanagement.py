@@ -19,9 +19,7 @@ from ccai import testbase
 from ccai.interfaces.icommandrunner import RunResult
 
 from ccai.sysman.uefi.bootmanagement import (
-    UefiBootActionResult,
     UefiBootActionStatus,
-    UefiBootEntryInfo,
     UefiBootEntrySpec,
     UefiBootManager,
     UefiBootManagerConfig,

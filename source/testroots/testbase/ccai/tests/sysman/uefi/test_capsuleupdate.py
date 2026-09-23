@@ -21,14 +21,10 @@ from ccai import testbase
 from ccai.interfaces.icommandrunner import RunResult
 
 from ccai.sysman.uefi.capsuleupdate import (
-    UefiCapsuleUpdateActionResult,
     UefiCapsuleUpdateActionStatus,
-    UefiCapsuleUpdateInfo,
     UefiCapsuleUpdateManager,
     UefiCapsuleUpdateManagerConfig,
     UefiCapsuleUpdateQueryError,
-    UefiCapsuleUpdateStatus,
-    UefiDeviceInfo,
 )
 
 
@@ -352,11 +348,6 @@ def test_list_available_updates_windows_invokes_get_windowsupdate():
         ``Get-WindowsUpdate`` PowerShell pipeline and parses the JSON.
     """
     runner = _MockCommandRunner()
-    powershell_command = (
-        "Get-WindowsUpdate -MicrosoftUpdate | "
-        "Where-Object { $_.CategoryIDs -contains 'firmware' } | "
-        "ConvertTo-Json"
-    )
     runner.default_result = _ok(stdout=_GET_WINDOWSUPDATE_JSON)
     config = UefiCapsuleUpdateManagerConfig(override_host_os="Windows")
     manager = UefiCapsuleUpdateManager(runner=runner, config=config)

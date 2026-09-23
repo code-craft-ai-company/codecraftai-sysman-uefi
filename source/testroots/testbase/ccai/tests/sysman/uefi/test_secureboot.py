@@ -18,14 +18,10 @@ from ccai import testbase
 from ccai.interfaces.icommandrunner import RunResult
 
 from ccai.sysman.uefi.secureboot import (
-    UefiKeyInfo,
-    UefiSecureBootActionResult,
     UefiSecureBootActionStatus,
     UefiSecureBootManager,
     UefiSecureBootManagerConfig,
-    UefiSecureBootPolicy,
     UefiSecureBootQueryError,
-    UefiSecureBootState,
 )
 
 
