@@ -1,6 +1,6 @@
 [project]
 name = "codecraftai-sysman-uefi"
-version = "1.2.0"
+version = "1.2.1"
 description = "Code Craft AI - System Management UEFI"
 readme = "README.rst"
 license = "LicenseRef-CodeCraftAI-Source-Available"
